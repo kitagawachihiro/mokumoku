@@ -25,7 +25,7 @@
             </div>
             <div class="mb-3">
               <%= f.label :gender %></br>
-              <%= f.select :gender, [["男性", 1], ["女性", 2], ["その他", 0]], include_blank: "選択して下さい", class: 'form-control' %>
+              <%= f.select :gender, User.genders_i18n.keys.map {|k| [I18n.t("enums.user.gender.#{k}"), k]},{}, {class: 'form-control'}%>
             </div>
             <div class="mb-3">
               <%= f.label :password %>
